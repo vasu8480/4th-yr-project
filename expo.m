@@ -1,0 +1,11 @@
+function WE1 = expo(img);
+%img = imread('57.jpg');
+lab1=img;
+R1 = double(lab1(:, :, 1)) / 255;
+sigma = 0.25;
+aver = 0.5;
+%maximum = 1.0;
+WE1 = exp(-(R1 - aver).^2 / (2*sigma^2));
+figure;
+imshow(WE1,[]);
+title('Exposedness weight');
